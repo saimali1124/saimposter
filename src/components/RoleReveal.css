@@ -1,0 +1,368 @@
+.role-reveal {
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.reveal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.player-counter {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.game-mode-badge {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 15px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.reveal-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pre-reveal {
+  text-align: center;
+  width: 100%;
+}
+
+.player-name-display {
+  margin-bottom: 40px;
+}
+
+.player-name-display h2 {
+  font-size: 2.5rem;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.reveal-instruction {
+  margin-bottom: 40px;
+}
+
+.reveal-instruction p {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-button {
+  padding: 20px 50px;
+  font-size: 1.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 3px solid white;
+  border-radius: 50px;
+  font-weight: 700;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s;
+}
+
+.reveal-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.post-reveal {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.role-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.role-header {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #8B0000;
+}
+
+.role-name {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.role-description {
+  margin-bottom: 25px;
+}
+
+.role-description p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.word-section {
+  margin-bottom: 20px;
+}
+
+.word-display {
+  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.word-display.imposter-word {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  box-shadow: 0 8px 25px rgba(245, 87, 108, 0.3);
+}
+
+.word-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.word-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.imposter-note {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+.special-info {
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #8B0000;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.special-info.warning {
+  background: rgba(255, 193, 7, 0.1);
+  border-left-color: #ffc107;
+}
+
+.special-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.special-info.warning .special-label {
+  color: #f57c00;
+}
+
+.special-value {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  flex: 1;
+  min-width: 140px;
+  padding: 16px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.prev-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  backdrop-filter: blur(10px);
+}
+
+.prev-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.next-button {
+  background: rgba(255, 255, 255, 0.95);
+  color: #8B0000;
+  border: 2px solid transparent;
+  font-weight: 700;
+}
+
+.next-button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .role-reveal {
+    padding: 15px;
+  }
+
+  .player-name-display h2 {
+    font-size: 2rem;
+  }
+
+  .reveal-instruction p {
+    font-size: 1.1rem;
+  }
+
+  .reveal-button {
+    padding: 18px 40px;
+    font-size: 1.2rem;
+  }
+
+  .role-card {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .role-name {
+    font-size: 1.7rem;
+  }
+
+  .role-description p {
+    font-size: 1rem;
+  }
+
+  .word-value {
+    font-size: 2rem;
+  }
+
+  .nav-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-reveal {
+    padding: 10px;
+  }
+
+  .reveal-header {
+    margin-bottom: 20px;
+  }
+
+  .player-name-display h2 {
+    font-size: 1.8rem;
+  }
+
+  .reveal-instruction p {
+    font-size: 1rem;
+  }
+
+  .reveal-button {
+    padding: 16px 35px;
+    font-size: 1.1rem;
+  }
+
+  .role-card {
+    padding: 20px 15px;
+  }
+
+  .role-name {
+    font-size: 1.5rem;
+  }
+
+  .role-description p {
+    font-size: 0.95rem;
+  }
+
+  .word-display {
+    padding: 20px;
+  }
+
+  .word-value {
+    font-size: 1.8rem;
+  }
+
+  .imposter-note {
+    font-size: 0.85rem;
+  }
+
+  .special-info {
+    padding: 12px;
+  }
+
+  .special-value {
+    font-size: 0.95rem;
+  }
+
+  .navigation-buttons {
+    gap: 10px;
+  }
+
+  .nav-button {
+    min-width: 120px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Landscape orientation for tablets */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .role-reveal {
+    padding: 15px;
+  }
+
+  .role-card {
+    padding: 20px;
+  }
+}
+

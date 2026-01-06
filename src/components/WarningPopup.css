@@ -1,0 +1,149 @@
+.warning-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.warning-popup {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 25px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  animation: popupSlideIn 0.3s ease-out;
+}
+
+@keyframes popupSlideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.warning-icon {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.warning-popup h2 {
+  font-size: 1.8rem;
+  color: #d32f2f;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.warning-message {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.warning-question {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.warning-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.warning-btn {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.cancel-btn {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.cancel-btn:hover {
+  background: #d0d0d0;
+  transform: translateY(-2px);
+}
+
+.confirm-btn {
+  background: #d32f2f;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+}
+
+.warning-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mobile optimizations */
+@media (max-width: 480px) {
+  .warning-popup {
+    padding: 25px 20px;
+    border-radius: 15px;
+  }
+
+  .warning-icon {
+    font-size: 3rem;
+  }
+
+  .warning-popup h2 {
+    font-size: 1.5rem;
+  }
+
+  .warning-message {
+    font-size: 0.9rem;
+  }
+
+  .warning-question {
+    font-size: 1rem;
+  }
+
+  .warning-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .warning-btn {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+

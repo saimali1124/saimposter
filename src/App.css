@@ -1,0 +1,124 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.complete-screen {
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.complete-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.complete-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.instruction-text {
+  font-size: 1.4rem !important;
+  font-weight: 600;
+  margin-top: 30px !important;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.complete-buttons {
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.reset-button {
+  padding: 18px 40px;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.reset-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.reset-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.reveal-button {
+  background: rgba(211, 47, 47, 0.3);
+  border-color: #ff4444;
+}
+
+.reveal-button:hover {
+  background: rgba(211, 47, 47, 0.4);
+  border-color: #ff6666;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .app {
+    padding: 15px;
+  }
+
+  .complete-screen h1 {
+    font-size: 2rem;
+  }
+
+  .complete-screen p {
+    font-size: 1.1rem;
+  }
+
+  .instruction-text {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .complete-screen h1 {
+    font-size: 1.8rem;
+  }
+
+  .complete-screen p {
+    font-size: 1rem;
+  }
+
+  .instruction-text {
+    font-size: 1.1rem !important;
+  }
+
+  .complete-buttons {
+    max-width: 100%;
+  }
+
+  .reset-button {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+  }
+}
+

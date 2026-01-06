@@ -1,0 +1,235 @@
+.roles-reveal-screen {
+  max-width: 600px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.roles-reveal-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.roles-reveal-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reveal-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.roles-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.role-reveal-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.player-name-reveal {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #8B0000;
+}
+
+.player-name-reveal h2 {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+.role-info-reveal {
+  margin-bottom: 15px;
+}
+
+.role-name-reveal {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #8B0000;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.role-desc-reveal {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+.word-info-reveal {
+  margin-bottom: 10px;
+}
+
+.word-reveal {
+  background: linear-gradient(135deg, #8B0000 0%, #8B4513 100%);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+.word-reveal.imposter-reveal {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.word-label-reveal {
+  display: block;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.word-value-reveal {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.imposter-note-reveal {
+  display: block;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  opacity: 0.95;
+  font-style: italic;
+}
+
+.special-info-reveal {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(102, 126, 234, 0.1);
+  border-left: 4px solid #8B0000;
+  border-radius: 8px;
+}
+
+.special-label-reveal {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: 600;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.special-value-reveal {
+  display: block;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.back-button {
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  margin-top: auto;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.back-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .roles-reveal-screen {
+    padding: 15px;
+  }
+
+  .roles-reveal-header h1 {
+    font-size: 2rem;
+  }
+
+  .role-reveal-card {
+    padding: 18px;
+  }
+
+  .player-name-reveal h2 {
+    font-size: 1.3rem;
+  }
+
+  .role-name-reveal {
+    font-size: 1.2rem;
+  }
+
+  .word-value-reveal {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .roles-reveal-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .reveal-subtitle {
+    font-size: 1rem;
+  }
+
+  .role-reveal-card {
+    padding: 15px;
+  }
+
+  .player-name-reveal h2 {
+    font-size: 1.2rem;
+  }
+
+  .role-name-reveal {
+    font-size: 1.1rem;
+  }
+
+  .role-desc-reveal {
+    font-size: 0.9rem;
+  }
+
+  .word-reveal {
+    padding: 12px;
+  }
+
+  .word-value-reveal {
+    font-size: 1.4rem;
+  }
+
+  .back-button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+}
+
