@@ -8,22 +8,42 @@
   backdrop-filter: blur(10px);
 }
 
+.setup-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
 .setup-title {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 5px;
   background: linear-gradient(135deg, #008080 0%, #20B2AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 800;
+  margin-bottom: 5px;
 }
 
 .setup-subtitle {
   text-align: center;
   color: #666;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
   font-size: 1rem;
+}
+
+.how-to-play-btn {
+  padding: 8px 18px;
+  background: linear-gradient(135deg, #008080 0%, #20B2AA 100%);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 128, 128, 0.3);
+}
+
+.how-to-play-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.4);
 }
 
 .setup-section {

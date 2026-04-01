@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { gameModes, getRandomWord, assignChallenges } from '../gameModes'
+import HowToPlay from './HowToPlay'
 import './GameSetup.css'
 
-const GameSetup = ({ onStart }) => {
-  const [players, setPlayers] = useState([''])
+const GameSetup = ({ onStart, savedPlayers }) => {
+  const [players, setPlayers] = useState(savedPlayers && savedPlayers.length > 0 ? savedPlayers : [''])
   const [selectedMode, setSelectedMode] = useState('specialRoles')
   const [difficulty, setDifficulty] = useState('easy')
   const [challengeMode, setChallengeMode] = useState(false)
+  const [showHowToPlay, setShowHowToPlay] = useState(false)
 
   const handlePlayerChange = (index, value) => {
     const newPlayers = [...players]
@@ -30,11 +32,6 @@ const GameSetup = ({ onStart }) => {
     
     if (validPlayers.length < gameModes[selectedMode].minPlayers) {
       alert(`Need at least ${gameModes[selectedMode].minPlayers} players!`)
-      return
-    }
-
-    if (validPlayers.length > gameModes[selectedMode].maxPlayers) {
-      alert(`Maximum ${gameModes[selectedMode].maxPlayers} players allowed!`)
       return
     }
 
@@ -73,6 +70,7 @@ const GameSetup = ({ onStart }) => {
       word: wordData.word,
       difficulty,
       challengeMode,
+      savedPlayerNames: players,
     })
   }
 
@@ -81,9 +79,15 @@ const GameSetup = ({ onStart }) => {
 
   return (
     <div className="game-setup">
-      <h1 className="setup-title">Saimposter</h1>
-      <p className="setup-subtitle">GoCoffee Edition</p>
+      <div className="setup-header">
+        <h1 className="setup-title">Saimposter</h1>
+        <p className="setup-subtitle">GoCoffee Edition</p>
+        <button className="how-to-play-btn" onClick={() => setShowHowToPlay(true)}>
+          How to Play
+        </button>
+      </div>
 
+      {/* Game mode selector hidden — still uses specialRoles via selectedMode state
       <div className="setup-section">
         <h2>Game Mode</h2>
         <div className="mode-selector">
@@ -104,6 +108,7 @@ const GameSetup = ({ onStart }) => {
           </p>
         </div>
       </div>
+      */}
 
       <div className="setup-section">
         <h2>Difficulty</h2>
@@ -140,7 +145,7 @@ const GameSetup = ({ onStart }) => {
           <div className="challenge-toggle-info">
             <div className="challenge-toggle-label">Enable Challenges</div>
             <div className="challenge-toggle-desc">
-              Each player gets a public challenge (Timer, Mime, Poet, etc.) shown to everyone after roles are assigned
+              Each player gets a unique public challenge (Timer, Ghost Voter, Gosaas Lover, etc.). No challenge repeats!
             </div>
           </div>
           <div className={`toggle-switch ${challengeMode ? 'on' : ''}`}>
@@ -184,10 +189,14 @@ const GameSetup = ({ onStart }) => {
       <button
         className="start-button"
         onClick={handleStart}
-        disabled={playerCount < mode.minPlayers || playerCount > mode.maxPlayers}
+        disabled={playerCount < mode.minPlayers}
       >
         Start Game
       </button>
+
+      {showHowToPlay && (
+        <HowToPlay onClose={() => setShowHowToPlay(false)} />
+      )}
     </div>
   )
 }

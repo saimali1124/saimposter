@@ -5,7 +5,6 @@ export const gameModes = {
     name: 'Special Roles',
     description: 'Play with Imposter and Bodyguard',
     minPlayers: 4,
-    maxPlayers: 16,
     roles: {
       civilian: {
         name: 'Civilian',
@@ -184,12 +183,6 @@ export const challengeModifiers = [
     emoji: '⏱️',
   },
   {
-    id: 'peacemaker',
-    name: 'Peacemaker',
-    description: 'If two players argue, you must calm things down before the game continues.',
-    emoji: '🕊️',
-  },
-  {
     id: 'poet',
     name: 'Poet',
     description: 'Every clue you give must rhyme with your previous one.',
@@ -213,16 +206,24 @@ export const challengeModifiers = [
     description: 'You must speak in a whisper the entire game.',
     emoji: '🤐',
   },
+  {
+    id: 'ghostVote',
+    name: 'Ghost Voter',
+    description: 'Your vote is not counted when the group votes someone out. You still discuss and vote as normal.',
+    emoji: '👻',
+  },
+  {
+    id: 'gosaas',
+    name: 'Gosaas Lover',
+    description: 'Before every line you speak, you must say out loud: I love gosaas',
+    emoji: '💚',
+  },
 ];
 
-// Assign random unique challenge modifiers to players
+// Each challenge is assigned at most once. If more players than challenges, extras get no challenge.
 export const assignChallenges = (playerCount) => {
   const shuffled = [...challengeModifiers].sort(() => Math.random() - 0.5);
-  const assignments = [];
-  for (let i = 0; i < playerCount; i++) {
-    assignments.push(shuffled[i % shuffled.length]);
-  }
-  return assignments;
+  return Array.from({ length: playerCount }, (_, i) => shuffled[i] || null);
 };
 
 // Get random word pair

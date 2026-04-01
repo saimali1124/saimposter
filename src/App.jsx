@@ -7,11 +7,13 @@ import ChallengesBoard from './components/ChallengesBoard'
 import './App.css'
 
 function App() {
-  const [gameState, setGameState] = useState('setup') // 'setup' | 'reveal' | 'challenges' | 'complete' | 'rolesRevealed'
+  const [gameState, setGameState] = useState('setup')
   const [gameData, setGameData] = useState(null)
   const [showWarning, setShowWarning] = useState(false)
+  const [savedPlayers, setSavedPlayers] = useState(null)
 
   const handleGameStart = (data) => {
+    setSavedPlayers(data.savedPlayerNames)
     setGameData(data)
     setGameState('reveal')
   }
@@ -54,7 +56,7 @@ function App() {
   return (
     <div className="app">
       {gameState === 'setup' && (
-        <GameSetup onStart={handleGameStart} />
+        <GameSetup onStart={handleGameStart} savedPlayers={savedPlayers} />
       )}
       {gameState === 'reveal' && gameData && (
         <RoleReveal 

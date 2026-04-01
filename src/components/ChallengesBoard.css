@@ -78,6 +78,12 @@
   line-height: 1.5;
 }
 
+.challenge-card-none {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
 .challenges-done-btn {
   width: 100%;
   padding: 18px;
