@@ -4,6 +4,7 @@ import RoleReveal from './components/RoleReveal'
 import WarningPopup from './components/WarningPopup'
 import RolesReveal from './components/RolesReveal'
 import ChallengesBoard from './components/ChallengesBoard'
+import InstallPrompt from './components/InstallPrompt'
 import './App.css'
 
 function App() {
@@ -102,6 +103,7 @@ function App() {
           onCancel={handleWarningCancel}
         />
       )}
+      <InstallPrompt />
     </div>
   )
 }
